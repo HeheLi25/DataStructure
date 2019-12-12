@@ -17,7 +17,7 @@ public class CompleteBinarySearchTree {
 	public static int getLeftLength(int n) {
 		if(n == 1) return 0;
 		int half = 1;
-		int result = 0;
+		int result = 0;//
 		int remain = n-1; //去除根节点
 		while((remain-2*half)>0) {
 			result += half;
