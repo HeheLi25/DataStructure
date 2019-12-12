@@ -12,8 +12,13 @@ public class Test {
 		}
 		g.printG();
 		
-		g.DFSTraverse();
-		g.BFSTraverse();
+//		g.DFSTraverse();
+//		g.BFSTraverse();
+		
+		g.unweightedShortestPath(3);
+		for(int i: g.dist) {System.out.print(i+" ");}
+		System.out.println();
+		for(int i: g.path) {System.out.print(i+" ");}
 		
 		
 		
