@@ -123,4 +123,8 @@ public class LGraph {
 			}
 		}
 	}
+	
+	public void Dijkstra(int v) {
+		
+	}
 }
