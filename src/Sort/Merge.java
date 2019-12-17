@@ -33,18 +33,18 @@ public class Merge {
 		}
 	}
 	
-	public static void MergeSort(int[] a) {
+	public static void mergeSort(int[] a) {
 		int n = a.length;
 		int[] tempA = new int[n];
 		MSort(a, tempA, 0, n-1);
 	}
 	
 	public static void main(String[] args) {
-		int[] test = new int[] {2,3,4,6,8,10,1,5,7,9};
+		int[] test = new int[] {10,9,8,7,6,5,4,3,2,1};
 //		int[] tempA = new int[test.length];
 //		merge(test, tempA, 0, 5, test.length-1);
 
-		MergeSort(test);
+		mergeSort(test);
 		System.out.println(Arrays.toString(test));
 	}
 
