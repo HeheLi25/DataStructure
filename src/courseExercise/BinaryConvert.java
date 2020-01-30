@@ -1,4 +1,4 @@
-package CourseExercise;
+package courseExercise;
 
 public class BinaryConvert {
 	public static String notRec(int n) {
