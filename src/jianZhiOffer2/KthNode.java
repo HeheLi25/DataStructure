@@ -6,20 +6,26 @@ public class KthNode {
 	Stack<TreeNode> stack = new Stack<TreeNode>();
 	
     public TreeNode KthNode(TreeNode pRoot, int k){
+    	//根节点放入递归方法
     	pushStack(pRoot);
     	TreeNode res = null;
+    	//从栈中获取第k个
     	for(int i = 1; i <= k; i++){
+    		if(stack.isEmpty()) return null;
     		res = stack.pop();
     	}
     	return res;
     }
+    //递归将结点从大到小压栈
     public void pushStack(TreeNode root){
+    	if(root == null) return;
+    	//递归右子树
     	if(root.right != null){
     		pushStack(root.right);
     	} 		
-    		
+    	//将自己压栈
     		stack.push(root);
-
+    	//递归左子树
     	if(root.left != null)
     		pushStack(root.left);
     }
