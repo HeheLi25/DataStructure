@@ -11,12 +11,15 @@ public class PathInTree {
     public void path(TreeNode root, int target, ArrayList<Integer> arr) {
     	if(root == null) return;
     	target = target - root.val;
+    	arr.add(root.val);
     	if(target == 0) {
-    		res.add(arr);
-    		return;
+    		if(root.left == null && root.right == null) {
+    			res.add(arr);
+    			return;
+    		}else return;
     	}
     	if(target < 0) return;
-    	arr.add(root.val);
+    	
     	ArrayList<Integer> arr2 = (ArrayList<Integer>) arr.clone();
     	path(root.left, target, arr);
     	path(root.right, target, arr2);
