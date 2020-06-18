@@ -1,20 +1,22 @@
 package jianZhiOffer5;
 
 import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 public class Perm {
 	public ArrayList<String> Permutation(String str){
-		Set<String> res = helper(str);
-		if(res.isEmpty()) return new ArrayList<String>();
-		String[] a = (String[]) res.toArray();
-		Arrays.sort(a);
-		return (ArrayList<String>) Arrays.asList(a);
+		ArrayList<String> ans = new ArrayList<String>();
+		HashSet<String> res = helper(str);
+		for(String s: res){
+			ans.add(s);
+		}
+		Collections.sort(ans);
+		return ans;
 	}
 	
-    public Set<String> helper(String str) {
-    	Set<String> res = new HashSet<String>();
+    public HashSet<String> helper(String str) {
+    	HashSet<String> res = new HashSet<String>();
     	if(str.length() == 1){
     		res.add(str);
     		return res;
