@@ -33,7 +33,7 @@ public class PrintCircle {
 		return res;
 	}
 	
-	public static void 0(String[] args) {
+	public static void main(String[] args) {
 		int n = 9;
 		int[][] res = print(n);
 		for(int i = 0; i < n; i++) {
