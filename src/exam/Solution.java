@@ -41,13 +41,16 @@ public class Solution {
     public static boolean isPlaindrome (String text) {
     	if(text == null || text.length() == 0) return false;
     	text = text.toLowerCase();
-        text = text.replaceAll("\\s*", "");
-        text = text.replaceAll("\\p{P}", "");
+ //       text = text.replaceAll("\\s*", "");
+        text = text.replaceAll("[^0-9a-zA-Z]", "");
+        System.out.println(text);
         char[] chars = text.toCharArray();
         int p1 = 0, p2 = chars.length -1;
         while(p2 - p1 > 1) {
-        	if(chars[p1] != chars[p2])
+        	if(chars[p1] != chars[p2]) {
+        		System.out.println(chars[p1] + "," + chars[p2]);
         		return false;
+        	}
         	p1++;
         	p2--;
         }
@@ -109,8 +112,11 @@ public class Solution {
 	}
     
     public static void main(String[] args) {
-    	int[] test = {1,7,7};
-    	System.out.println(twoSumCount(test, 8));
+    	String s = "`l;`` 1o1 ??;l`";
+    	
+    	System.out.println(isPlaindrome(s));
+//    	int[] test = {1,7,7};
+//    	System.out.println(twoSumCount(test, 8));
     	//System.out.println(isPlaindrome("a"));
     	//System.out.println(rearrange("o*f*f*e*r*"));
     }
