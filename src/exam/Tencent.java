@@ -1,3 +1,4 @@
+package exam;
 import java.util.Scanner;
 public class Tencent {
     public static void main(String[] args) {
