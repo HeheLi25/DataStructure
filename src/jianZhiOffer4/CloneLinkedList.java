@@ -38,9 +38,55 @@ public class CloneLinkedList {
     	}
     	return newHead;
     }
+    
+    
+    public static RandomListNode Clone2(RandomListNode pHead){
+        RandomListNode node = pHead;
+        RandomListNode copy;
+        RandomListNode temp;
+        while(node != null){
+            copy = new RandomListNode(node.label);
+            temp = node.next;
+            copy.next = temp;
+            node.next = copy;
+            node = temp;
+        }
+        node = pHead;
+        while(node != null){
+            temp = node.random;
+            if(temp != null)
+            	node.next.random = temp.next;
+            else node.next.random = null;
+            node = node.next.next;
+        }
+        RandomListNode dummy = new RandomListNode(0);
+        RandomListNode pre = dummy;
+        node = pHead;
+        while(node != null){
+            temp = node.next;
+            pre.next = temp;
+            node.next = temp.next;
+            node = node.next;
+            pre = pre.next;
+        }
+        return dummy.next;
+    }
+    
+    
     public static void main(String[] args){
     	RandomListNode t1 = new RandomListNode(1);
-    	RandomListNode res = Clone(t1);
+    	RandomListNode t2 = new RandomListNode(2);
+    	RandomListNode t3 = new RandomListNode(3);
+    	RandomListNode t4 = new RandomListNode(4);
+    	t1.next = t2;
+    	t2.next = t3;
+    	t3.next = t4;
+    	t1.random = t3;
+    	t2.random = t4;
+    	t3.random = null;
+    	t4.random = t1;
+    	RandomListNode res = Clone2(t1);
+    	System.out.println(res.label+","+res.next.label+","+res.next.next.label+","+res.next.next.next.label);
     }
 
     public static class RandomListNode {

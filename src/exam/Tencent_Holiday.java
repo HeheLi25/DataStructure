@@ -15,7 +15,7 @@ public class Tencent_Holiday {
         for(int i = 1; i <= n; i++){
             gyms[i] = in.nextInt();
         }
-        int res = holiday(n, works, gyms);
+        int res = holiday(n, works, gyms); 
         System.out.println(res);
     }
      
